@@ -75,7 +75,9 @@ done
 
 cp $output1 $output2
 
-sed -i 's/22:22:22:22:22:22/33:33:33:33:33:33/g' $output2
+sed -i 's/src\ ipv4\=1\./src\ ipv4\=2\./g' $output2
+sed -i 's/11:11:11:11:11:11/33:33:33:33:33:33/g' $output2
+sed -i 's/22:22:22:22:22:22/44:44:44:44:44:44/g' $output2
 sed -i 's/1.0.0.1/1.0.0.2/g' $output2
 
 
