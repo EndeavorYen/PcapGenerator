@@ -78,3 +78,8 @@ cp $output1 $output2
 sed -i 's/22:22:22:22:22:22/33:33:33:33:33:33/g' $output2
 sed -i 's/1.0.0.1/1.0.0.2/g' $output2
 
+
+pcap_out1="1-"$pkt_size"B-"$n_flows"flows.pcap"
+pcap_out2="2-"$pkt_size"B-"$n_flows"flows.pcap"
+./PcapGenerator -f $output1 -o $pcap_out1
+./PcapGenerator -f $output2 -o $pcap_out2
