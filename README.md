@@ -36,3 +36,8 @@ make
 
 ##### Generate Output.pcap from example.cfg
 ./PcapGenerator -f example.cfg -o Output.pcap
+
+
+##### Generate specific packet_size and flow from Script
+./PktConfGenerator.sh 64 5000
+./PktConfGenerator.sh 1280 10000
