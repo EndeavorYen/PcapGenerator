@@ -56,7 +56,7 @@ D=1
 
 max=254
 # eval printf -v ip_pool "%s\ " {$A..$max}.{$B..$max}.{$C..$max}.{$D..$max}
-eval printf -v ip_pool "%s\ " 1.{$B..2}.{$C..$max}.{$D..$max}
+eval printf -v ip_pool "%s\ " 1.{$B..20}.{$C..$max}.{$D..$max}
 count=0
 
 for src_ip in $ip_pool; do
@@ -67,7 +67,8 @@ for src_ip in $ip_pool; do
 	echo "pkt buf="$pkt_buf >> $output1
 	echo "src mac=11:11:11:11:11:11" >> $output1
 	echo "src ipv4="$src_ip >> $output1
-	echo "dst mac=22:22:22:22:22:22" >> $output1
+	# echo "dst mac=22:22:22:22:22:22" >> $output1
+	echo "dst mac=68:05:ca:30:3c:68" >> $output1
 	echo "dst ipv4=1.0.0.1" >> $output1
 	echo "rep=1" >> $output1
 	((count++))
@@ -77,7 +78,8 @@ cp $output1 $output2
 
 sed -i 's/src\ ipv4\=1\./src\ ipv4\=2\./g' $output2
 sed -i 's/11:11:11:11:11:11/33:33:33:33:33:33/g' $output2
-sed -i 's/22:22:22:22:22:22/44:44:44:44:44:44/g' $output2
+# sed -i 's/22:22:22:22:22:22/44:44:44:44:44:44/g' $output2
+sed -i 's/68:05:ca:30:3c:68/68:05:ca:30:3c:69/g' $output2
 sed -i 's/1.0.0.1/1.0.0.2/g' $output2
 
 
